@@ -2,6 +2,8 @@
 #include <QtQuick>
 #endif
 
+#include "htwatcher.h"
+
 #include <sailfishapp.h>
 
 int main(int argc, char *argv[])
@@ -15,6 +17,8 @@ int main(int argc, char *argv[])
     //   - SailfishApp::pathToMainQml() to get a QUrl to the main QML file
     //
     // To display the view, call "show()" (will show fullscreen on device).
+
+    qmlRegisterType<HtWatcher>("org.sailfish.htp", 1, 0, "HtWatcher");
 
     return SailfishApp::main(argc, argv);
 }

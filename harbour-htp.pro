@@ -14,7 +14,8 @@ TARGET = harbour-htp
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-htp.cpp
+SOURCES += src/harbour-htp.cpp \
+    src/htwatcher.cpp
 
 DISTFILES += qml/harbour-htp.qml \
     qml/cover/CoverPage.qml \
@@ -38,3 +39,6 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-htp-de.ts
+
+HEADERS += \
+    src/htwatcher.h
