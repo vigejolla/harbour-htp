@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import org.sailfish.htp 1.0
 
 Page {
     id: page
@@ -29,14 +30,23 @@ Page {
 
             width: page.width
             spacing: Theme.paddingLarge
+
+            property var currentTemp: HtWatcher.temperature
+
             PageHeader {
-                title: qsTr("UI Template")
+                title: qsTr("Bluetooth Thermometer")
             }
             Label {
                 x: Theme.horizontalPageMargin
-                text: qsTr("Hello Sailors")
+                text: qsTr("Current temp: ") + column.currentTemp + qsTr(" C")
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeExtraLarge
+            }
+            Button {
+                anchors.horizontalCenter: column.horizontalCenter
+                id: refreshButton
+                text: qsTr("Refresh")
+                onClicked: refreshButton.text = "Refresh"
             }
         }
     }
