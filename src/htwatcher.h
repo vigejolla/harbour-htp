@@ -2,6 +2,9 @@
 #define HTWATCHER_H
 
 #include <QObject>
+#include <QMap>
+#include <QString>
+#include <QVariant>
 
 class HtWatcher : public QObject
 {
@@ -20,6 +23,7 @@ signals:
 
 public slots:
     void setTemperature(double temperature);
+    void MeasurementReceived(QMap<QString, QVariant> measurement);
 };
 
 #endif // HTWATCHER_H
