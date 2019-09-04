@@ -8,6 +8,10 @@ Page {
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
 
+    HtWatcher {
+        id: watcher
+    }
+
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
@@ -31,7 +35,7 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
 
-            property var currentTemp: HtWatcher.temperature
+            property var currentTemp: watcher.temperature
 
             PageHeader {
                 title: qsTr("Bluetooth Thermometer")
